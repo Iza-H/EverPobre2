@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IAHNoteViewController">
             <connections>
+                <outlet property="addButton" destination="M7J-xD-XYV" id="PgC-QE-nPH"/>
                 <outlet property="bootomToolbar" destination="tqY-QT-b3i" id="gJa-pc-8fz"/>
                 <outlet property="creationViewDate" destination="A7G-dC-RyH" id="OiT-Wm-OtU"/>
                 <outlet property="modificationViewDate" destination="xxQ-7h-RE3" id="t8D-jV-rVo"/>
@@ -60,6 +61,12 @@
                         <barButtonItem title="Photo" id="oz9-xq-F3l">
                             <connections>
                                 <action selector="displayPhoto:" destination="-1" id="dzS-cX-iaB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Jdw-Zk-IeX"/>
+                        <barButtonItem title="Add" id="M7J-xD-XYV">
+                            <connections>
+                                <action selector="addButton:" destination="-1" id="yTY-IR-51m"/>
                             </connections>
                         </barButtonItem>
                     </items>

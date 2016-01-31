@@ -9,6 +9,7 @@
 #import "IAHNoteViewController.h"
 #import "IAHNote.h"
 #import "IAHPhotoViewController.h"
+#import "IAHNotebook.h"
 
 @interface IAHNoteViewController ()
 
@@ -16,6 +17,9 @@
 @property (nonatomic) CGRect oldFrame;
 @property (nonatomic) double animationDuration;
 @property (nonatomic) BOOL isKeyboardVisible;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property (strong, nonatomic) NSManagedObjectContext *context;
+@property (strong, nonatomic) IAHNotebook *notebook;
 
 @end
 
@@ -25,6 +29,15 @@
     if (self = [super initWithNibName:nil bundle:nil]){
         _model = model;
         
+    }
+    return self;
+}
+
+//When we used it to add a new notebook:
+-(id) initWithNotebook : (IAHNotebook *) notebook withContext: (NSManagedObjectContext *) context {
+    if (self = [super initWithNibName:nil bundle:nil]){
+        _notebook = notebook;
+        _context = context;
     }
     return self;
 }
@@ -51,6 +64,16 @@
     
     self.textView.text = self.model.text;
     self.nameView.text = self.model.name;
+    
+    if (self.model==nil){
+        self.addButton.title = @"Add";
+        [self.addButton setStyle: UIBarButtonItemStylePlain];
+        [self.addButton setEnabled:true];
+    }else{
+        self.addButton.title = @"";
+        [self.addButton setStyle: UIBarButtonItemStylePlain];
+        [self.addButton setEnabled:false];
+    }
     
     //Alta de notificaciones de teclado
     
@@ -133,6 +156,11 @@
     IAHPhotoViewController *pVC = [[IAHPhotoViewController alloc] initWitModel:self.model];
     [self.navigationController  pushViewController:pVC animated:YES];
     
+}
+
+- (IBAction)addButton:(id)sender {
+    [IAHNote noteWithName:self.nameView.text text:self.textView.text notebook:self.notebook context:self.context];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 -(IBAction)removeKeyboard:(id)sender{

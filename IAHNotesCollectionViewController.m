@@ -17,10 +17,17 @@
 static NSString *cellId = @"NoteCellId";
 
 @interface IAHNotesCollectionViewController ()
-
+@property (nonatomic, strong) IAHNotebook *notebook;
 @end
 
 @implementation IAHNotesCollectionViewController
+
+-(id)initWithFetchedResultsController:fc notebook:nb layout:layout{
+    if (self = [super initWithFetchedResultsController:fc layout:layout]){
+        _notebook = nb;
+    }
+    return self;
+}
 
 #pragma mark -  View Lifecicle
 -(void) viewWillAppear:(BOOL)animated{
@@ -74,6 +81,8 @@ static NSString *cellId = @"NoteCellId";
 
 -(void)addNewNote:(id) sender{
     //[IAHNote noteWithName:@"Nueva nota" notebook:self.notebook context:self.notebook.managedObjectContext];
+    IAHNoteViewController *nVC = [[IAHNoteViewController alloc]initWithNotebook:self.notebook withContext: self.fetchedResultsController.managedObjectContext];
+    [self.navigationController pushViewController:nVC animated:YES];
 }
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{

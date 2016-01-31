@@ -123,7 +123,7 @@
     layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
     
     // View controller
-    IAHNotesCollectionViewController *nVC = [IAHNotesCollectionViewController coreDataCollectionViewControllerWithFetchedResultsController:fc layout:layout];
+    IAHNotesCollectionViewController *nVC = [[IAHNotesCollectionViewController alloc]initWithFetchedResultsController:fc notebook:nb layout:layout];
     
     // Push it!
     nVC.hidesBottomBarWhenPushed = YES;

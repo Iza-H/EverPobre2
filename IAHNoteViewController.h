@@ -16,7 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UIToolbar *bootomToolbar;
 - (IBAction)displayPhoto:(id)sender;
+- (IBAction)addButton:(id)sender;
 
 -(id) initWithModel : (IAHNote *) model;
+-(id) initWithNotebook : (IAHNotebook *) notebook withContext: (NSManagedObjectContext *) context;
 
 @end

@@ -35,6 +35,12 @@
     return note;
 }
 
++(instancetype) noteWithName:(NSString *) name text: (NSString *) text notebook: (IAHNotebook*) notebook context:(NSManagedObjectContext *) context{
+    IAHNote *note = [self noteWithName:name notebook:notebook context:context];
+    note.text = text;
+    return note;
+}
+
 +(instancetype) noteWithName:(NSString *) name notebook: (IAHNotebook*) notebook latitude: (NSNumber *) latitude longitude: (NSNumber *) longitude address:(NSString *) address context:(NSManagedObjectContext *) context{
     IAHNote *note = [self noteWithName:name notebook:notebook context:context];
     IAHLocation *loc = [IAHLocation locationWithLongitude:longitude latitude:latitude address:address context:context];

@@ -87,10 +87,7 @@
 
     
     IAHMapViewController *mVC = [[IAHMapViewController alloc] initWithLocationArray:results context:self.model.context];
-    
-    
-    
-    
+
     
     
     UITabBarController *tC = [[UITabBarController alloc] init];

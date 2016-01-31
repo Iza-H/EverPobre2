@@ -9,5 +9,6 @@
 #import "AGTCoreDataCollectionViewController.h"
 
 @interface IAHNotesCollectionViewController : AGTCoreDataCollectionViewController
+-(id)initWithFetchedResultsController:fc notebook:nb layout:layout;
 
 @end
