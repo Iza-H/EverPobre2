@@ -1,5 +1,5 @@
 //
-//  IAHNoteCellView.h
+//  IAHNoteViewCellCollectionViewCell.h
 //  EverPobreCurso
 //
 //  Created by Izabela on 31/1/16.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IAHNoteCellView : UICollectionViewCell
+@interface IAHNoteViewCellCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UILabel *modyficationDateView;
 @property (weak, nonatomic) IBOutlet UILabel *titleView;
 
 @end

@@ -10,6 +10,10 @@
 #import "IAHNotebook.h"
 #import "IAHNote.h"
 #import "IAHNotesViewController.h"
+#import "IAHNotesCollectionViewController.h"
+
+
+
 
 @interface IAHNotebooksViewController ()
 
@@ -55,8 +59,9 @@
 }
 
 
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    //Obtener la libreta
+//-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    /*//Obtener la libreta
     IAHNotebook *nb = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     //Crear el fetch request
@@ -73,9 +78,91 @@
     //Crear FetchResults
     NSFetchedResultsController *fc = [[NSFetchedResultsController alloc] initWithFetchRequest:req managedObjectContext:nb.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.itemSize = CGSizeMake(120, 104);
+    
+    
     //Crear el controlador
-    IAHNotesViewController *nVC = [[IAHNotesViewController alloc] initWithFetchedResultsController:fc style:UITableViewStylePlain notebook:nb];
-    [self.navigationController pushViewController:nVC animated:YES];
+    IAHNotesCollectionViewController *nVC = [IAHNotesCollectionViewController coreDataCollectionViewControllerWithFetchedResultsController:fc layout:layout];
+    
+    //IAHNotesViewController *nVC = [[IAHNotesViewController alloc] initWithFetchedResultsController:fc style:UITableViewStylePlain notebook:nb];
+    [self.navigationController pushViewController:nVC animated:YES];*/
+    // Fetch request
+ /*   NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[IAHNote entityName]];
+    req.sortDescriptors = @[[NSSortDescriptor
+                             sortDescriptorWithKey:IAHNoteAttributes.name
+                             ascending:YES],
+                            [NSSortDescriptor
+                             sortDescriptorWithKey:IAHNoteAttributes.modificationDate
+                             ascending:NO],
+                            [NSSortDescriptor
+                             sortDescriptorWithKey:IAHNoteAttributes.creationDate
+                             ascending:NO]];
+    
+    // Fetched Results Controller
+    NSFetchedResultsController *fc = [[NSFetchedResultsController alloc]
+                                      initWithFetchRequest:req
+                                      managedObjectContext:self.fetchedResultsController.managedObjectContext
+                                      sectionNameKeyPath:nil
+                                      cacheName:nil];
+    
+    // layout
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 5;
+    layout.itemSize = CGSizeMake(120, 150);
+    layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+    
+    // View controller
+    IAHNotesCollectionViewController *nb = [IAHNotesCollectionViewController coreDataCollectionViewControllerWithFetchedResultsController:fc
+                                                                                                               layout:layout];
+    
+    // Push it!
+    [self.navigationController pushViewController:nb
+                                         animated:YES];
+}*/
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //Obtener la libreta
+     IAHNotebook *nb = [self.fetchedResultsController objectAtIndexPath:indexPath];
+     
+     //Crear el fetch request
+     NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:[IAHNote entityName]];
+     req.fetchBatchSize = 25;
+     req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:IAHNoteAttributes.name ascending:YES selector:@selector(caseInsensitiveCompare:)],
+     [NSSortDescriptor sortDescriptorWithKey:IAHNoteAttributes.modificationDate ascending:NO]];
+     
+     
+     
+     //configuarlo con un predicato
+     req.predicate = [NSPredicate predicateWithFormat: @"notebook == %@", nb];
+    
+    
+   
+    
+    // Fetched Results Controller
+    NSFetchedResultsController *fc = [[NSFetchedResultsController alloc]
+                                      initWithFetchRequest:req
+                                      managedObjectContext:self.fetchedResultsController.managedObjectContext
+                                      sectionNameKeyPath:nil
+                                      cacheName:nil];
+    
+    // layout
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 5;
+    layout.itemSize = CGSizeMake(120, 150);
+    layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+    
+    // View controller
+    IAHNotesCollectionViewController *nVC = [IAHNotesCollectionViewController coreDataCollectionViewControllerWithFetchedResultsController:fc layout:layout];
+    
+    // Push it!
+    [self.navigationController pushViewController:nVC
+                                         animated:YES];
+    
 }
 
 

@@ -71,6 +71,8 @@
     IAHNoteViewController *nVC = [[IAHNoteViewController alloc]initWithModel:note];
     [self.navigationController pushViewController:nVC animated:YES];
     
+    
+    
 }
 
 

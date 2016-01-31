@@ -1,14 +1,14 @@
 //
-//  IAHNoteCellView.m
+//  IAHNoteViewCellCollectionViewCell.m
 //  EverPobreCurso
 //
 //  Created by Izabela on 31/1/16.
 //  Copyright © 2016 Izabela. All rights reserved.
 //
 
-#import "IAHNoteCellView.h"
+#import "IAHNoteViewCellCollectionViewCell.h"
 
-@implementation IAHNoteCellView
+@implementation IAHNoteViewCellCollectionViewCell
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -18,7 +18,6 @@
     }
     return self;
 }
-
 
 
 @end
