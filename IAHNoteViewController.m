@@ -31,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isKeyboardVisible=NO;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -86,6 +87,8 @@
     [nc removeObserver:self];
 }
 -(void) keyboardWillAppear:(NSNotification *)note{
+    if (self.isKeyboardVisible==NO){
+        self.isKeyboardVisible=YES;
         NSDictionary *info = note.userInfo;
         self.animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey]doubleValue];
         CGRect oldFrame = self.textView.frame;
@@ -96,12 +99,14 @@
         [UIView animateWithDuration:self.animationDuration animations:^{
             self.textView.frame = newFrame;
         }];
+      }
 }
     
     
     
 
 -(void) keyboardWillDisappear:(NSNotification *)note{
+    self.isKeyboardVisible=NO;
     NSDictionary *info = note.userInfo;
     CGRect oldFrame = self.textView.frame;
     CGRect kbbFrame = [[info objectForKey:UIKeyboardFrameEndUserInfoKey]CGRectValue];
