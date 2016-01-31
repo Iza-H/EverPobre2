@@ -94,7 +94,7 @@
     
     
     UITabBarController *tC = [[UITabBarController alloc] init];
-    tC.viewControllers = @[[tVC wrappedInNavigation], [mVC wrappedInNavigation]];
+    tC.viewControllers = @[[tVC wrappedInNavigation], [mVC wrappedInNavigationWithTitleForTabBar: @"Map"]];
     self.window.rootViewController = tC;
     
     [self.window makeKeyAndVisible];

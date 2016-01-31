@@ -100,6 +100,7 @@
     IAHNotesCollectionViewController *nVC = [IAHNotesCollectionViewController coreDataCollectionViewControllerWithFetchedResultsController:fc layout:layout];
     
     // Push it!
+    nVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:nVC
                                          animated:YES];
     

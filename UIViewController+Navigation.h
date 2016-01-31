@@ -10,5 +10,6 @@
 
 @interface UIViewController (Navigation)
 -(UINavigationController *) wrappedInNavigation;
+-(UINavigationController *) wrappedInNavigationWithTitleForTabBar: (NSString *) title;
 
 @end

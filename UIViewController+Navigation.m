@@ -18,4 +18,14 @@
     
 }
 
+-(UINavigationController *) wrappedInNavigationWithTitleForTabBar: (NSString *) title{
+    //Creamos navigation Controller
+    UINavigationController *nav = [UINavigationController new];
+    nav.tabBarItem.title = title;
+    [nav pushViewController:self animated:NO];
+    
+    return nav;
+    
+}
+
 @end
