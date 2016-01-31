@@ -9,6 +9,7 @@
 #import "IAHPhotoViewController.h"
 #import "IAHNote.h"
 #import "IAHPhoto.h"
+#import "IAHImageFilter.h"
 @import UIKit;
 
 @interface IAHPhotoViewController ()
@@ -16,6 +17,7 @@
 @property (nonatomic) BOOL isModelImageEmpty;
 @property (nonatomic) BOOL shouldSaveImageToModel;
 @property (nonatomic, strong) IAHNote *model;
+@property (nonatomic, strong) NSOperationQueue *queue;
 @end
 
 @implementation IAHPhotoViewController
@@ -23,6 +25,7 @@
 -(id) initWitModel : (IAHNote *) note{
     if (self == [super initWithNibName:nil bundle:nil]) {
         _model = note;
+        _queue = [[NSOperationQueue alloc] init];
         if (note.photo.imageData == nil ){
             _shouldSaveImageToModel = NO;
         } else{
@@ -53,9 +56,13 @@
     [self presentViewController:pVC animated:YES completion:nil];
     
     self.deleteButton.enabled = NO;
+    self.vintageButton.enabled = NO;
     
 }
 - (IBAction)applayFilter:(id)sender {
+    IAHImageFilter *f = [[IAHImageFilter alloc]initWithImageViewController:self];
+    [self.queue addOperation:f];
+    
 }
 - (IBAction)delete:(id)sender {
     CGRect oldBounds = self.photoView.bounds;
@@ -67,6 +74,7 @@
         self.model.photo.image = nil;
         self.photoView.image = nil;
         self.deleteButton.enabled = NO;
+        self.vintageButton.enabled=NO;
         self.photoView.alpha = 1;
         self.photoView.bounds = oldBounds;
         self.photoView.transform = CGAffineTransformIdentity;
@@ -74,8 +82,9 @@
     
 }
 
--(void) viewDidAppear:(BOOL)animated{
-    [super viewWillDisappear:animated];
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.activityView.hidden=YES;
     
     self.title = self.model.name;
     if (self.model.photo.imageData !=nil){
@@ -86,6 +95,7 @@
         self.shouldSaveImageToModel = NO;
     }
     self.deleteButton.enabled = self.shouldSaveImageToModel;
+    self.vintageButton.enabled =self.shouldSaveImageToModel;
 }
             
 -(void) viewWillDisappear:(BOOL)animated{

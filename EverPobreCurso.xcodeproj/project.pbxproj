@@ -15,6 +15,7 @@
 		FD35763B1C5AE08E00F8BA0C /* IAHPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD3576391C5AE08E00F8BA0C /* IAHPhotoViewController.xib */; };
 		FD4528EC1C5D7B65006270C9 /* _IAHLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4528EB1C5D7B65006270C9 /* _IAHLocation.m */; };
 		FD4528EF1C5D7B73006270C9 /* IAHLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4528EE1C5D7B73006270C9 /* IAHLocation.m */; };
+		FD4528F31C5D8E6C006270C9 /* IAHImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4528F21C5D8E6C006270C9 /* IAHImageFilter.m */; };
 		FDE5E2DD1C5044FD001866BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE5E2DC1C5044FD001866BE /* main.m */; };
 		FDE5E2E01C5044FD001866BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE5E2DF1C5044FD001866BE /* AppDelegate.m */; };
 		FDE5E2E81C5044FD001866BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE5E2E71C5044FD001866BE /* Assets.xcassets */; };
@@ -59,6 +60,8 @@
 		FD4528EB1C5D7B65006270C9 /* _IAHLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _IAHLocation.m; path = EverPobreCurso/_IAHLocation.m; sourceTree = "<group>"; };
 		FD4528ED1C5D7B73006270C9 /* IAHLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IAHLocation.h; path = EverPobreCurso/IAHLocation.h; sourceTree = "<group>"; };
 		FD4528EE1C5D7B73006270C9 /* IAHLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAHLocation.m; path = EverPobreCurso/IAHLocation.m; sourceTree = "<group>"; };
+		FD4528F11C5D8E6C006270C9 /* IAHImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAHImageFilter.h; sourceTree = "<group>"; };
+		FD4528F21C5D8E6C006270C9 /* IAHImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAHImageFilter.m; sourceTree = "<group>"; };
 		FDE5E2D81C5044FD001866BE /* EverPobreCurso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverPobreCurso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE5E2DC1C5044FD001866BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FDE5E2DE1C5044FD001866BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -118,9 +121,19 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		FD4528F01C5D8E2F006270C9 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				FD4528F11C5D8E6C006270C9 /* IAHImageFilter.h */,
+				FD4528F21C5D8E6C006270C9 /* IAHImageFilter.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
 		FDE5E2CF1C5044FD001866BE = {
 			isa = PBXGroup;
 			children = (
+				FD4528F01C5D8E2F006270C9 /* Operations */,
 				FD3576341C5ADF3400F8BA0C /* Resources */,
 				FDE5E3211C5591C2001866BE /* Categoria */,
 				FDE5E31A1C5583E8001866BE /* Controllers */,
@@ -350,6 +363,7 @@
 				FDE5E3061C504BB5001866BE /* Model.xcdatamodeld in Sources */,
 				FDE5E3171C5141E7001866BE /* IAHNotebook.m in Sources */,
 				FDE5E3021C504552001866BE /* AGTSimpleCoreDataStack.m in Sources */,
+				FD4528F31C5D8E6C006270C9 /* IAHImageFilter.m in Sources */,
 				FDE5E3181C5141E7001866BE /* _IAHNote.m in Sources */,
 				FD35763A1C5AE08E00F8BA0C /* IAHPhotoViewController.m in Sources */,
 				FDE5E2DD1C5044FD001866BE /* main.m in Sources */,
