@@ -10,6 +10,15 @@
 
 @implementation IAHLocation
 
++(instancetype)locationWithLongitude:(NSNumber *)longitude latitude: (NSNumber *) latitude address: (NSString *) address context:(NSManagedObjectContext *) context{
+    
+        IAHLocation *loc =[self insertInManagedObjectContext:context];
+        loc.latitude = latitude;
+        loc.longitude = longitude;
+        loc.address = address;
+        return loc;
+}
+
 
 +(instancetype)locationWithCLLocation: (CLLocation *) loc forNote: (IAHNote *) note{
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[IAHLocation entityName]];

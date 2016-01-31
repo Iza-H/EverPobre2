@@ -13,6 +13,8 @@
 #import "IAHNotebooksViewController.h"
 #import "UIViewController+Navigation.h"
 #import "Settings.h"
+#import "IAHLocation.h"
+#import "IAHMapViewController.h"
 
 
 @interface AppDelegate ()
@@ -32,6 +34,7 @@
     [IAHNote noteWithName:@"Pampita" notebook:nb context:self.model.context];
     [IAHNote noteWithName:@"Camila" notebook:nb context:self.model.context];
     [IAHNote noteWithName:@"Mariana" notebook:nb context:self.model.context];
+    [IAHNote noteWithName:@"Belen" notebook:nb latitude: @41.3827416 longitude:  @1.32880926 address: @"Casa" context:self.model.context];
     
     [IAHNote noteWithName:@"Parla" notebook:l context:self.model.context];
     
@@ -74,7 +77,26 @@
     NSFetchedResultsController *fc = [[NSFetchedResultsController alloc] initWithFetchRequest:r managedObjectContext:self.model.context sectionNameKeyPath:nil cacheName:nil];
     
     IAHNotebooksViewController *tVC = [[IAHNotebooksViewController alloc] initWithFetchedResultsController:fc style: UITableViewStylePlain];
-    self.window.rootViewController = [tVC wrappedInNavigation];
+    //self.window.rootViewController = [tVC wrappedInNavigation];
+    
+    
+    NSFetchRequest *locreq = [NSFetchRequest fetchRequestWithEntityName:[IAHLocation entityName]];
+    NSError *error =nil;
+    NSArray *results = [self.model.context executeFetchRequest:locreq error:&error];
+    NSAssert(results, @"Error al buscar");
+
+    
+    IAHMapViewController *mVC = [[IAHMapViewController alloc] initWithLocationArray:results context:self.model.context];
+    
+    
+    
+    
+    
+    
+    UITabBarController *tC = [[UITabBarController alloc] init];
+    tC.viewControllers = @[[tVC wrappedInNavigation], [mVC wrappedInNavigation]];
+    self.window.rootViewController = tC;
+    
     [self.window makeKeyAndVisible];
     
     

@@ -23,6 +23,8 @@
     return @[@"name", @"text", @"notebook", @"photo.imageData", @"location"];
 }
 
+
+
 +(instancetype) noteWithName:(NSString *) name notebook: (IAHNotebook*) notebook context:(NSManagedObjectContext *) context{
     IAHNote *note =[self insertInManagedObjectContext:context];
     note.name = name;
@@ -30,6 +32,13 @@
     note.creationDate = [NSDate date];
     note.modificationDate = [NSDate date];
     note.photo=[IAHPhoto insertInManagedObjectContext:context];
+    return note;
+}
+
++(instancetype) noteWithName:(NSString *) name notebook: (IAHNotebook*) notebook latitude: (NSNumber *) latitude longitude: (NSNumber *) longitude address:(NSString *) address context:(NSManagedObjectContext *) context{
+    IAHNote *note = [self noteWithName:name notebook:notebook context:context];
+    IAHLocation *loc = [IAHLocation locationWithLongitude:longitude latitude:latitude address:address context:context];
+    note.location=loc;
     return note;
 }
 
