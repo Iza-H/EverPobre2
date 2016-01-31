@@ -16,6 +16,8 @@
 		FD4528EC1C5D7B65006270C9 /* _IAHLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4528EB1C5D7B65006270C9 /* _IAHLocation.m */; };
 		FD4528EF1C5D7B73006270C9 /* IAHLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4528EE1C5D7B73006270C9 /* IAHLocation.m */; };
 		FD4528F31C5D8E6C006270C9 /* IAHImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4528F21C5D8E6C006270C9 /* IAHImageFilter.m */; };
+		FD4528F61C5E3A70006270C9 /* IAHNoteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4528F51C5E3A70006270C9 /* IAHNoteCollectionViewCell.xib */; };
+		FD4528F91C5E3B4C006270C9 /* IAHNoteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4528F81C5E3B4C006270C9 /* IAHNoteCellView.m */; };
 		FDE5E2DD1C5044FD001866BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE5E2DC1C5044FD001866BE /* main.m */; };
 		FDE5E2E01C5044FD001866BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE5E2DF1C5044FD001866BE /* AppDelegate.m */; };
 		FDE5E2E81C5044FD001866BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE5E2E71C5044FD001866BE /* Assets.xcassets */; };
@@ -62,6 +64,9 @@
 		FD4528EE1C5D7B73006270C9 /* IAHLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAHLocation.m; path = EverPobreCurso/IAHLocation.m; sourceTree = "<group>"; };
 		FD4528F11C5D8E6C006270C9 /* IAHImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAHImageFilter.h; sourceTree = "<group>"; };
 		FD4528F21C5D8E6C006270C9 /* IAHImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAHImageFilter.m; sourceTree = "<group>"; };
+		FD4528F51C5E3A70006270C9 /* IAHNoteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IAHNoteCollectionViewCell.xib; sourceTree = "<group>"; };
+		FD4528F71C5E3B4C006270C9 /* IAHNoteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAHNoteCellView.h; sourceTree = "<group>"; };
+		FD4528F81C5E3B4C006270C9 /* IAHNoteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAHNoteCellView.m; sourceTree = "<group>"; };
 		FDE5E2D81C5044FD001866BE /* EverPobreCurso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverPobreCurso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE5E2DC1C5044FD001866BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FDE5E2DE1C5044FD001866BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,9 +135,20 @@
 			name = Operations;
 			sourceTree = "<group>";
 		};
+		FD4528F41C5E3A3B006270C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD4528F51C5E3A70006270C9 /* IAHNoteCollectionViewCell.xib */,
+				FD4528F71C5E3B4C006270C9 /* IAHNoteCellView.h */,
+				FD4528F81C5E3B4C006270C9 /* IAHNoteCellView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		FDE5E2CF1C5044FD001866BE = {
 			isa = PBXGroup;
 			children = (
+				FD4528F41C5E3A3B006270C9 /* Views */,
 				FD4528F01C5D8E2F006270C9 /* Operations */,
 				FD3576341C5ADF3400F8BA0C /* Resources */,
 				FDE5E3211C5591C2001866BE /* Categoria */,
@@ -331,6 +347,7 @@
 				FD3575E91C5840B900F8BA0C /* IAHNoteViewController.xib in Resources */,
 				FD35763B1C5AE08E00F8BA0C /* IAHPhotoViewController.xib in Resources */,
 				FD3576361C5ADF3F00F8BA0C /* 390px-No_photo_available.svg.png in Resources */,
+				FD4528F61C5E3A70006270C9 /* IAHNoteCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +372,7 @@
 				FDE5E3241C559201001866BE /* UIViewController+Navigation.m in Sources */,
 				FDE5E3151C5141E7001866BE /* _IAHPhoto.m in Sources */,
 				FDE5E31D1C55848A001866BE /* AGTCoreDataTableViewController.m in Sources */,
+				FD4528F91C5E3B4C006270C9 /* IAHNoteCellView.m in Sources */,
 				FD4528EC1C5D7B65006270C9 /* _IAHLocation.m in Sources */,
 				FDE5E3201C5585B2001866BE /* IAHNotebooksViewController.m in Sources */,
 				FDE5E3131C5141E7001866BE /* IAHPhoto.m in Sources */,
