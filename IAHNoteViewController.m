@@ -86,23 +86,21 @@
     [nc removeObserver:self];
 }
 -(void) keyboardWillAppear:(NSNotification *)note{
-    if (self.isKeyboardVisible){
-        self.isKeyboardVisible = YES;
         NSDictionary *info = note.userInfo;
         self.animationDuration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey]doubleValue];
         CGRect oldFrame = self.textView.frame;
         CGRect kbbFrame = [[info objectForKey:UIKeyboardFrameEndUserInfoKey]CGRectValue];
         
-        CGRect newFrame = CGRectMake(oldFrame.origin.x,oldFrame.origin.y, oldFrame.size.width, oldFrame.size.height-kbbFrame.size.height + self.bootomToolbar.bounds.size.height);
+        CGRect newFrame = CGRectMake(oldFrame.origin.x,oldFrame.origin.y, oldFrame.size.width, oldFrame.size.height-kbbFrame.size.height + self.bootomToolbar.bounds.size.height );
         
         [UIView animateWithDuration:self.animationDuration animations:^{
             self.textView.frame = newFrame;
         }];
-    }
-    
-    
-    
 }
+    
+    
+    
+
 -(void) keyboardWillDisappear:(NSNotification *)note{
     NSDictionary *info = note.userInfo;
     CGRect oldFrame = self.textView.frame;

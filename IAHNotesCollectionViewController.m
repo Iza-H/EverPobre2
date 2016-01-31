@@ -50,7 +50,12 @@ static NSString *cellId = @"NoteCellId";
                                                                       forIndexPath:indexPath];
     //Settings:
     cell.titleView.text = note.name;
-    cell.photoView.image = note.photo.image;
+    if (note.photo.image!=nil){
+       cell.photoView.image = note.photo.image;
+    }else {
+        cell.photoView.image  = [UIImage imageNamed:@"img_not_avalaible.png"];
+    }
+
     
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     fmt.dateStyle = NSDateFormatterMediumStyle;

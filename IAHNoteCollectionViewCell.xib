@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="120" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="390px-No_photo_available.svg.png" translatesAutoresizingMaskIntoConstraints="NO" id="QtL-PX-9Wk">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_not_avalaible.png" translatesAutoresizingMaskIntoConstraints="NO" id="QtL-PX-9Wk">
                         <rect key="frame" x="8" y="8" width="104" height="105"/>
                         <animations/>
                     </imageView>
@@ -39,6 +39,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="390px-No_photo_available.svg.png" width="390" height="599"/>
+        <image name="img_not_avalaible.png" width="640" height="480"/>
     </resources>
 </document>

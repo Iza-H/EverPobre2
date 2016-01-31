@@ -91,7 +91,7 @@
         self.photoView.image = self.model.photo.image;
         self.shouldSaveImageToModel = YES;
     }else{
-        self.photoView.image  = [UIImage imageNamed:@"390px-No_photo_available.svg.png"];
+        self.photoView.image  = [UIImage imageNamed:@"img_not_avalaible.png"];
         self.shouldSaveImageToModel = NO;
     }
     self.deleteButton.enabled = self.shouldSaveImageToModel;

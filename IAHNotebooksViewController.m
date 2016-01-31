@@ -16,6 +16,7 @@
 
 
 @interface IAHNotebooksViewController ()
+@property (nonatomic, strong) NSString* notebookNameNew;
 
 @end
 
@@ -58,8 +59,33 @@
     return cell;
 }
 
+#pragma mark - New Notebook
 -(void) addNewNoteBook:(id) sender{
-    [IAHNotebook notebookWithName:@"New Notebook" context:self.fetchedResultsController.managedObjectContext];
+    self.notebookNameNew=nil;
+    //[IAHNotebook notebookWithName:@"New Notebook" context:self.fetchedResultsController.managedObjectContext];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"New notebook" message:@"Put a name of the notbook" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [IAHNotebook notebookWithName:self.notebookNameNew context:self.fetchedResultsController.managedObjectContext];
+    }]];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Name:";
+        textField.secureTextEntry = NO;
+        [textField addTarget:self
+                      action:@selector(alertTextFieldDidChange:)
+            forControlEvents:UIControlEventEditingChanged];
+    }];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)alertTextFieldDidChange:(UITextField *)sender
+{
+    UIAlertController *alertController = (UIAlertController *)self.presentedViewController;
+    if (alertController)
+    {
+        UITextField *newNotebookTextField = alertController.textFields.firstObject;
+        self.notebookNameNew=newNotebookTextField.text;
+    }
 }
 
 

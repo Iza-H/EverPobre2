@@ -43,7 +43,7 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="390px-No_photo_available.svg.png" id="vmM-m1-mQV">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_not_avalaible.png" id="vmM-m1-mQV">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <animations/>
@@ -61,6 +61,6 @@
         </view>
     </objects>
     <resources>
-        <image name="390px-No_photo_available.svg.png" width="390" height="599"/>
+        <image name="img_not_avalaible.png" width="640" height="480"/>
     </resources>
 </document>

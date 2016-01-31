@@ -25,6 +25,7 @@
 		FD4529171C5E6815006270C9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4529161C5E6815006270C9 /* MapKit.framework */; };
 		FD4529191C5E6831006270C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD4529181C5E6831006270C9 /* CoreLocation.framework */; };
 		FD45291C1C5E6D61006270C9 /* IAHMapAnotationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD45291B1C5E6D61006270C9 /* IAHMapAnotationObject.m */; };
+		FD45291E1C5EA565006270C9 /* img_not_avalaible.png in Resources */ = {isa = PBXBuildFile; fileRef = FD45291D1C5EA565006270C9 /* img_not_avalaible.png */; };
 		FDE5E2DD1C5044FD001866BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE5E2DC1C5044FD001866BE /* main.m */; };
 		FDE5E2E01C5044FD001866BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE5E2DF1C5044FD001866BE /* AppDelegate.m */; };
 		FDE5E2E81C5044FD001866BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDE5E2E71C5044FD001866BE /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		FD4529181C5E6831006270C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FD45291A1C5E6D61006270C9 /* IAHMapAnotationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAHMapAnotationObject.h; sourceTree = "<group>"; };
 		FD45291B1C5E6D61006270C9 /* IAHMapAnotationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAHMapAnotationObject.m; sourceTree = "<group>"; };
+		FD45291D1C5EA565006270C9 /* img_not_avalaible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_not_avalaible.png; sourceTree = "<group>"; };
 		FDE5E2D81C5044FD001866BE /* EverPobreCurso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverPobreCurso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE5E2DC1C5044FD001866BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FDE5E2DE1C5044FD001866BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		FD3576341C5ADF3400F8BA0C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FD45291D1C5EA565006270C9 /* img_not_avalaible.png */,
 				FD3576351C5ADF3F00F8BA0C /* 390px-No_photo_available.svg.png */,
 			);
 			name = Resources;
@@ -378,6 +381,7 @@
 				FDE5E2EB1C5044FD001866BE /* LaunchScreen.storyboard in Resources */,
 				FDE5E2E81C5044FD001866BE /* Assets.xcassets in Resources */,
 				FD3575E91C5840B900F8BA0C /* IAHNoteViewController.xib in Resources */,
+				FD45291E1C5EA565006270C9 /* img_not_avalaible.png in Resources */,
 				FD35763B1C5AE08E00F8BA0C /* IAHPhotoViewController.xib in Resources */,
 				FD3576361C5ADF3F00F8BA0C /* 390px-No_photo_available.svg.png in Resources */,
 			);
